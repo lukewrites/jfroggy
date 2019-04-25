@@ -1,9 +1,16 @@
+language: python
+
 stages:
+- install
+- test
 - name: deploy
   if: tag =~ tdvt
 
-install:
+after_install:
   - curl -fL https://getcli.jfrog.io | sh
+
+script:
+  - python -m unittest
 
 jobs:
   include:
