@@ -15,4 +15,4 @@ jobs:
     install:
     - npm install -g jfrog-cli-go
     script:
-    - jfrog rt p --url=$PROD_URL --apikey=$PROD_API_KEY
+    - ./jfrog rt p --url=$PROD_URL --apikey=$PROD_API_KEY
