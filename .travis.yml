@@ -1,7 +1,7 @@
 language: python
 
 stages:
-- install
+- after_install
 - test
 - name: deploy
   if: tag =~ tdvt
