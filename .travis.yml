@@ -13,5 +13,5 @@ jobs:
   - python: 3.6
   - stage: deploy
     script:
-      - curl -fL https://getcli.jfrog.io | sh
-      - jfrog rt p --url=$PROD_URL --apikey=$PROD_API_KEY
+    - npm install -g jfrog-cli-go
+    - jfrog rt p --url=$PROD_URL --apikey=$PROD_API_KEY
