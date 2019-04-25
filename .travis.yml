@@ -12,6 +12,7 @@ jobs:
   include:
   - python: 3.6
   - stage: deploy
-    script:
+    install:
     - npm install -g jfrog-cli-go
+    script:
     - jfrog rt p --url=$PROD_URL --apikey=$PROD_API_KEY
