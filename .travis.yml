@@ -1,0 +1,13 @@
+stages:
+- name: deploy
+  if: tag =~ tdvt
+
+install:
+  - curl -fL https://getcli.jfrog.io | sh
+
+jobs:
+  include:
+  - python: 3.6
+
+  - stage: deploy
+    script: jfrog rt p --url=$PROD_URL --apikey=$PROD_API_KEY
