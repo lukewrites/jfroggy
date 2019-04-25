@@ -6,11 +6,12 @@ stages:
   if: tag =~ tdvt
 
 script:
-- curl -fL https://getcli.jfrog.io | sh
 - python -m unittest
 
 jobs:
   include:
   - python: 3.6
   - stage: deploy
-    script: jfrog rt p --url=$PROD_URL --apikey=$PROD_API_KEY
+    script:
+      - curl -fL https://getcli.jfrog.io | sh
+      - jfrog rt p --url=$PROD_URL --apikey=$PROD_API_KEY
